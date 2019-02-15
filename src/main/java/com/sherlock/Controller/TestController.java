@@ -11,7 +11,7 @@ public class TestController {
 
     @RequestMapping(method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
     public String index() {
-        return "Hello world!";
+        return "Hello world!!";
     }
 }
 
