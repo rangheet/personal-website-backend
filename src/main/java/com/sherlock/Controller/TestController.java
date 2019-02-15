@@ -1,4 +1,4 @@
-package com.sherlock.personalwebsitebackend.Controller;
+package com.sherlock.Controller;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
