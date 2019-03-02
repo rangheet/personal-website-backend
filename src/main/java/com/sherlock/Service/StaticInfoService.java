@@ -20,11 +20,8 @@ public class StaticInfoService implements StaticInfoInterface {
     @Override
     public PersonalInfo GetPersonalInfo() {
 
-//        Calendar calendar=Calendar.getInstance();
-//        calendar.set(Calendar.YEAR,1997);
-//        calendar.set(Calendar.DATE,20);
-//        calendar.set(Calendar.MONTH,Calendar.FEBRUARY);
-        return new PersonalInfo("Heet Dave", "Software Engineer", "20th Feb 1997");
+        return new PersonalInfo("Heet Dave", "Software Engineer", "20th Feb 1997", "Endurance International Group","https://www.linkedin.com/in/heetdave/","This is my bio.", "Sherlock Icon.png");
+
     }
 
     @Override
