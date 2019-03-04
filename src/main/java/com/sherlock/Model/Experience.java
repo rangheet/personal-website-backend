@@ -1,7 +1,5 @@
 package com.sherlock.Model;
 
-import java.util.Date;
-
 public class Experience {
 
     private String CompanyName;
