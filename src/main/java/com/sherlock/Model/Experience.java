@@ -3,20 +3,22 @@ package com.sherlock.Model;
 public class Experience {
 
     private String CompanyName;
+    private String Position;
     private String StartTime;
     private String EndTime;
     private String MentorName;
-    private String MentorContactNo;
+    private String MentorContact;
     private String WorkDescription;
 
-    public Experience(String CompanyName, String StartTime, String EndTime, String MentorName, String MentorContactNo, String WorkDescription)
+    public Experience(String CompanyName, String StartTime, String EndTime, String MentorName, String MentorContact, String WorkDescription, String Position)
     {
         this.CompanyName=CompanyName;
         this.StartTime=StartTime;
         this.EndTime=EndTime;
-        this.MentorContactNo=MentorContactNo;
+        this.MentorContact = MentorContact;
         this.MentorName=MentorName;
         this.WorkDescription=WorkDescription;
+        this.Position=Position;
     }
 
     public String getCompanyName() {
@@ -51,12 +53,12 @@ public class Experience {
         MentorName = mentorName;
     }
 
-    public String getMentorContactNo() {
-        return MentorContactNo;
+    public String getMentorContact() {
+        return MentorContact;
     }
 
-    public void setMentorContactNo(String mentorContactNo) {
-        MentorContactNo = mentorContactNo;
+    public void setMentorContact(String mentorContact) {
+        MentorContact = mentorContact;
     }
 
     public String getWorkDescription() {
@@ -65,6 +67,14 @@ public class Experience {
 
     public void setWorkDescription(String workDescription) {
         WorkDescription = workDescription;
+    }
+
+    public String getPosition() {
+        return Position;
+    }
+
+    public void setPosition(String position) {
+        Position = position;
     }
 
 }

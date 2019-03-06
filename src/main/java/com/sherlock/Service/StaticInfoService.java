@@ -6,6 +6,7 @@ import com.sherlock.Model.PersonalInfo;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -19,15 +20,15 @@ public class StaticInfoService implements StaticInfoInterface {
     @Override
     public PersonalInfo GetPersonalInfo() {
 
-        return new PersonalInfo("Heet Dave", "Software Engineer", "20th Feb 1997", "Endurance International Group","https://www.linkedin.com/in/heetdave/","This is my bio.", "Sherlock Icon.png");
+        return new PersonalInfo("Heet Dave", "Software Engineer", "856377000000", "Endurance International Group","https://www.linkedin.com/in/heetdave/","This is my bio.", "Sherlock Icon.png");
 
     }
 
     @Override
     public List<Experience> GetExperiences() {
 
-        Experience experience1=new Experience("Endurance Intl. Group", "Dec 2018", "Current","Dhanya Angepat","NA", "ReactJS and Java SpringBoot");
-        Experience experience2=new Experience("Fintech Global Center", "May 2018", "Dec 2018","Pratik Joshi","NA", "C#, Javascript, jQuery, Docker, Jenkins");
+        Experience experience1=new Experience("Endurance Intl. Group", "1544985000000", "","Dhanya Angepat","NA", "ReactJS and Java SpringBoot", "Software Engineer");
+        Experience experience2=new Experience("Fintech Global Center", "1526236200000", "1544725800000","Pratik Joshi","NA", "C#, Javascript, jQuery, Docker, Jenkins", "Software Engineer");
 
         List<Experience> experiences=new ArrayList<>();
         experiences.add(experience1);
