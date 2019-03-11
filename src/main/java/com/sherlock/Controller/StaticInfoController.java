@@ -1,7 +1,6 @@
 package com.sherlock.Controller;
 
-import com.sherlock.Model.Experience;
-import com.sherlock.Model.PersonalInfo;
+import com.sherlock.Model.*;
 import com.sherlock.Service.StaticInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -37,6 +36,31 @@ public class StaticInfoController {
     @RequestMapping(value = "/Experiences", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity< List<Experience> > GetExperiences(){
         return new ResponseEntity<>(staticInfoService.GetExperiences(), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/Education", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity< List<Education> > GetEducation(){
+        return new ResponseEntity<>(staticInfoService.GetEducation(), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/Projects", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity< List<Project> > GetProjects(){
+        return new ResponseEntity<>(staticInfoService.GetProjects(), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/Skills", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity< List<Skill> > GetSkills(){
+        return new ResponseEntity<>(staticInfoService.GetSkills(), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/Electives", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity< List<Elective> > GetElectives(){
+        return new ResponseEntity<>(staticInfoService.GetElectives(), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/Extracurricular", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity< List<Extracurricular> > GetExtracurricular(){
+        return new ResponseEntity<>(staticInfoService.GetExtracurricular(), HttpStatus.OK);
     }
 
 }
