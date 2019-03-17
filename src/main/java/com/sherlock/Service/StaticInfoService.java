@@ -19,7 +19,7 @@ public class StaticInfoService implements StaticInfoInterface {
     @Override
     public PersonalInfo GetPersonalInfo() {
 
-        return new PersonalInfo("Heet Dave", "Software Engineer", "856377000000", "Endurance International Group","https://www.linkedin.com/in/heetdave/","This is my bio.", "Sherlock Icon.png");
+        return new PersonalInfo("Heet Dave", "Software Engineer", "856377000000", "Endurance International Group","https://www.linkedin.com/in/heetdave/","This is my bio.", "Sherlock Icon.png","https://github.com/rangheet");
 
     }
 

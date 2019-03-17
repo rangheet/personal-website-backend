@@ -9,17 +9,20 @@ public class PersonalInfo {
     private String LinkedIn;
     private String Bio;
     private String ProfileImage;
+    private String Github;
 
-    public PersonalInfo(String Name, String Occupation, String DateOfBirth, String Company, String LinkedIn, String Bio, String ProfileImage)
-    {
-        this.Name=Name;
-        this.Occupation=Occupation;
-        this.DateOfBirth=DateOfBirth;
-        this.Company=Company;
-        this.LinkedIn=LinkedIn;
-        this.Bio=Bio;
-        this.ProfileImage=ProfileImage;
+    public PersonalInfo(String name, String occupation, String dateOfBirth, String company, String linkedIn, String bio, String profileImage, String github) {
+        Name = name;
+        Occupation = occupation;
+        DateOfBirth = dateOfBirth;
+        Company = company;
+        LinkedIn = linkedIn;
+        Bio = bio;
+        ProfileImage = profileImage;
+        Github = github;
     }
+
+
 
     public String getName() {
         return Name;
@@ -75,6 +78,13 @@ public class PersonalInfo {
 
     public void setProfileImage(String profileImage) {
         ProfileImage = profileImage;
+    }
+    public String getGithub() {
+        return Github;
+    }
+
+    public void setGithub(String github) {
+        Github = github;
     }
 
 }
