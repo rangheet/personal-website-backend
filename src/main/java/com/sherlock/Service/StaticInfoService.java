@@ -102,4 +102,9 @@ public class StaticInfoService implements StaticInfoInterface {
 
     }
 
+    @Override
+    public Logos GetLogos() {
+        return new Logos("github-logo-white.png","linkedin-logo-white.svg","","","","","");
+    }
+
 }

@@ -63,5 +63,9 @@ public class StaticInfoController {
         return new ResponseEntity<>(staticInfoService.GetExtracurricular(), HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/Logos", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity<Logos> GetLogos(){
+        return new ResponseEntity<>(staticInfoService.GetLogos(), HttpStatus.OK);
+    }
 }
 
