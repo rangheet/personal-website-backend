@@ -15,5 +15,6 @@ public interface StaticInfoInterface {
     List<Skill> GetSkills();
     List<Extracurricular> GetExtracurricular();
     List<Education> GetEducation();
+    Logos GetLogos();
 
 }
