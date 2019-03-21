@@ -10,12 +10,14 @@ public class Project {
     private String Company;
     private List<String> TechnologiesUsed;
     private String Description;
+    private String ProjectType;
 
-    public Project(String title, String company, List<String> technologiesUsed, String description) {
+    public Project(String title, String company, List<String> technologiesUsed, String description, String ProjectType) {
         this.Title = title;
         this.Company = company;
         this.TechnologiesUsed = technologiesUsed;
         this.Description = description;
+        this.ProjectType= ProjectType;
     }
 
     public String getTitle() {
@@ -52,4 +54,11 @@ public class Project {
         this.Description = description;
     }
 
+    public String getProjectType() {
+        return ProjectType;
+    }
+
+    public void setProjectType(String projectType) {
+        ProjectType = projectType;
+    }
 }

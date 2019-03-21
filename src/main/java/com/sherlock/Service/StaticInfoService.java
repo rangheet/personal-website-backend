@@ -56,12 +56,15 @@ public class StaticInfoService implements StaticInfoInterface {
     @Override
     public List<Project> GetProjects() {
 
-        Project project1 = new Project("Information Retrieval Project","DA-IICT",new ArrayList<>(Arrays.asList("Information Retrieval","N-gram","ETC")), "IRDescription");
-        Project project2 = new Project("IoT Project","DA-IICT",new ArrayList<>(Arrays.asList("IoT","OpenCV","ETC")), "IoTDescription");
+        Project project1 = new Project("Information Retrieval Project","DA-IICT",new ArrayList<>(Arrays.asList("Information Retrieval","N-gram","ETC")), "IRDescription","Academic");
+        Project project2 = new Project("IoT Project","DA-IICT",new ArrayList<>(Arrays.asList("IoT","OpenCV","ETC")), "IoTDescription","Academic");
+        Project project3 = new Project("Personal Website","",new ArrayList<>(Arrays.asList("HTML","CSS","ReactJS", "SpringBoot")), "Personal PrijectDescription","Personal");
+
 
         List<Project> projects = new ArrayList<>();
         projects.add(project1);
         projects.add(project2);
+        projects.add(project3);
 
         return projects;
     }
