@@ -1,5 +1,7 @@
 package com.sherlock.Model;
 
+import java.util.List;
+
 public class Experience {
 
     private String CompanyName;
@@ -9,8 +11,11 @@ public class Experience {
     private String MentorName;
     private String MentorContact;
     private String WorkDescription;
+    private String Location;
+    private Logo CompanyLogo;
+    private List<String> Technologies;
 
-    public Experience(String CompanyName, String StartTime, String EndTime, String MentorName, String MentorContact, String WorkDescription, String Position)
+    public Experience(String CompanyName, String StartTime, String EndTime, String MentorName, String MentorContact, String WorkDescription, String Position, String Location, Logo CompanyLogo, List<String> Technologies)
     {
         this.CompanyName=CompanyName;
         this.StartTime=StartTime;
@@ -19,6 +24,9 @@ public class Experience {
         this.MentorName=MentorName;
         this.WorkDescription=WorkDescription;
         this.Position=Position;
+        this.Location=Location;
+        this.CompanyLogo=CompanyLogo;
+        this.Technologies = Technologies;
     }
 
     public String getCompanyName() {
@@ -75,6 +83,29 @@ public class Experience {
 
     public void setPosition(String position) {
         Position = position;
+    }
+
+    public String getLocation() {
+        return Location;
+    }
+
+    public void setLocation(String location) {
+        Location = location;
+    }
+    public Logo getCompanyLogo() {
+        return CompanyLogo;
+    }
+
+    public void setCompanyLogo(Logo companyLogo) {
+        CompanyLogo = companyLogo;
+    }
+
+    public List<String> getTechnologies() {
+        return Technologies;
+    }
+
+    public void setTechnologies(List<String> technologies) {
+        Technologies = technologies;
     }
 
 }

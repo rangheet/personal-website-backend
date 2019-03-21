@@ -6,20 +6,16 @@ public class PersonalInfo {
     private String Occupation;
     private String DateOfBirth;
     private String Company;
-    private String LinkedIn;
     private String Bio;
     private String ProfileImage;
-    private String Github;
 
-    public PersonalInfo(String name, String occupation, String dateOfBirth, String company, String linkedIn, String bio, String profileImage, String github) {
+    public PersonalInfo(String name, String occupation, String dateOfBirth, String company, String bio, String profileImage) {
         Name = name;
         Occupation = occupation;
         DateOfBirth = dateOfBirth;
         Company = company;
-        LinkedIn = linkedIn;
         Bio = bio;
         ProfileImage = profileImage;
-        Github = github;
     }
 
 
@@ -56,14 +52,6 @@ public class PersonalInfo {
         Company = company;
     }
 
-    public String getLinkedIn() {
-        return LinkedIn;
-    }
-
-    public void setLinkedIn(String linkedIn) {
-        LinkedIn = linkedIn;
-    }
-
     public String getBio() {
         return Bio;
     }
@@ -78,13 +66,6 @@ public class PersonalInfo {
 
     public void setProfileImage(String profileImage) {
         ProfileImage = profileImage;
-    }
-    public String getGithub() {
-        return Github;
-    }
-
-    public void setGithub(String github) {
-        Github = github;
     }
 
 }

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.List;
 
 @CrossOrigin
@@ -64,7 +65,7 @@ public class StaticInfoController {
     }
 
     @RequestMapping(value = "/Logos", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<Logos> GetLogos(){
+    public ResponseEntity<HashMap<String, Logo>> GetLogos(){
         return new ResponseEntity<>(staticInfoService.GetLogos(), HttpStatus.OK);
     }
 }

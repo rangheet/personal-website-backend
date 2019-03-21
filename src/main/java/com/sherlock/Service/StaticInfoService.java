@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.HashMap;
 
 @Service
 public class StaticInfoService implements StaticInfoInterface {
@@ -19,20 +20,22 @@ public class StaticInfoService implements StaticInfoInterface {
     @Override
     public PersonalInfo GetPersonalInfo() {
 
-        return new PersonalInfo("Heet Dave", "Software Engineer", "856377000000", "Endurance International Group","https://www.linkedin.com/in/heetdave/","This is my bio.", "Sherlock Icon.png","https://github.com/rangheet");
+        return new PersonalInfo("Heet Dave", "Software Engineer", "856377000000", "Endurance International Group", "This is my bio.", "Sherlock Icon.png");
 
     }
 
     @Override
     public List<Experience> GetExperiences() {
 
-        Experience experience1=new Experience("Endurance Intl. Group", "1544985000000", "","Dhanya Angepat","NA", "ReactJS and Java SpringBoot", "Software Engineer");
-        Experience experience2=new Experience("Fintech Global Center", "1526236200000", "1544725800000","Pratik Joshi","NA", "C#, Javascript, jQuery, Docker, Jenkins", "Software Engineer");
+        Experience experience1=new Experience("Endurance International Group", "1544985000000", "","Dhanya Angepat","NA", "ReactJS and Java SpringBoot", "Software Engineer","Bangalore, India", new Logo("Endurance", "endurance-logo.jpeg","https://www.endurance.com/"), new ArrayList<>(Arrays.asList("ReactJS", "SpringBoot")));
+        Experience experience2=new Experience("Fintech Global Center", "1526236200000", "1544725800000","Pratik Joshi","NA", "C#, Javascript, jQuery, Docker, Jenkins", "Software Engineer", "Gandhinagar, India", new Logo("FintechGlobalCenter", "fintech-global-center-logo.jpeg","https://www.fintechglobal.center/"), new ArrayList<>(Arrays.asList("C#", "Javascript", "jQuery", "Docker", "Jenkins")));
+        Experience experience3=new Experience("Indian Space Research Organization (ISR0)", "1514887200000", "1526032800000","Akhilesh Sharma","NA", "NLP, Neural Network, Python", "Intern","Ahmedabad, India", new Logo("ISRO", "isro-logo.jpg","https://www.isro.gov.in/"), new ArrayList<>(Arrays.asList("NLP", "Neural Network", "Python")));
+
 
         List<Experience> experiences=new ArrayList<>();
         experiences.add(experience1);
         experiences.add(experience2);
-
+        experiences.add(experience3);
         return experiences;
 
     }
@@ -103,8 +106,16 @@ public class StaticInfoService implements StaticInfoInterface {
     }
 
     @Override
-    public Logos GetLogos() {
-        return new Logos("github-logo-white.png","linkedin-logo-white.svg","","","","","");
+    public HashMap<String, Logo> GetLogos() {
+
+        Logo Github = new Logo("Github", "github-logo-white.png","https://github.com/rangheet");
+        Logo LinkedIn = new Logo("LinkedIn", "linkedin-logo-white.svg", "https://www.linkedin.com/in/heetdave/");
+
+        HashMap<String, Logo> Logos= new HashMap<>();
+        Logos.put("Github", Github);
+        Logos.put("LinkedIn", LinkedIn);
+
+        return Logos;
     }
 
 }
