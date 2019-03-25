@@ -72,12 +72,20 @@ public class StaticInfoService implements StaticInfoInterface {
     @Override
     public List<Skill> GetSkills() {
 
-        Skill skill1 = new Skill("C++",9);
-        Skill skill2 = new Skill("C#",8);
+        Skill skill1 = new Skill("C++",9, "Language");
+        Skill skill2 = new Skill("C#",8, "Language");
+        Skill skill3 = new Skill("JIRA",8, "PM");
+        Skill skill4 = new Skill(".NET",8, "WebTech");
+        Skill skill5 = new Skill("ReactJS",8, "WebTech");
+
 
         List<Skill> skills = new ArrayList<>();
         skills.add(skill1);
         skills.add(skill2);
+        skills.add(skill3);
+        skills.add(skill4);
+        skills.add(skill5);
+
 
         return skills;
 
@@ -86,7 +94,7 @@ public class StaticInfoService implements StaticInfoInterface {
     @Override
     public List<Extracurricular> GetExtracurricular() {
 
-        Extracurricular extracurricular1 = new Extracurricular("DA-IICT", "2016-2017","Core Committee Member","DescriptionDA-IICT","Gujarat", "India");
+        Extracurricular extracurricular1 = new Extracurricular("Synapse, DA-IICT", "2016-2017","Core Committee Member","DescriptionDA-IICT","Gujarat", "India");
         Extracurricular extracurricular2 = new Extracurricular("Agaria Heet Rakshak Manch", "December 2015","Volunteer","DescriptionRI","Gujarat", "India");
 
         List<Extracurricular> extracurriculars = new ArrayList<>();
@@ -99,8 +107,7 @@ public class StaticInfoService implements StaticInfoInterface {
     @Override
     public List<Education> GetEducation() {
 
-        Education education1 = new Education("DA-IICT",2014,2018, (float) 7.06, "Gandhinagar","Gujarat","India");
-
+        Education education1 = new Education("Dhirubhai Ambani Institute of Information and Communication Technology (DA-IICT)",2014,2018, (float) 7.06, "Gandhinagar","Gujarat","India", new Logo("DA-IICT", "daiict-logo.jpg","https://www.daiict.ac.in/"), "DA-IICT");
         List<Education> educations = new ArrayList<>();
         educations.add(education1);
 
