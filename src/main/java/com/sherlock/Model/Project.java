@@ -9,10 +9,10 @@ public class Project {
     private String Title;
     private String Company;
     private List<String> TechnologiesUsed;
-    private String Description;
+    private List<String> Description;
     private String ProjectType;
 
-    public Project(String title, String company, List<String> technologiesUsed, String description, String ProjectType) {
+    public Project(String title, String company, List<String> technologiesUsed, List<String> description, String ProjectType) {
         this.Title = title;
         this.Company = company;
         this.TechnologiesUsed = technologiesUsed;
@@ -46,11 +46,11 @@ public class Project {
     }
 
     @JsonProperty("projectDescription")
-    public String getDescription() {
+    public List<String> getDescription() {
         return Description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(List<String> description) {
         this.Description = description;
     }
 

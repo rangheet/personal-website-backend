@@ -10,12 +10,12 @@ public class Experience {
     private String EndTime;
     private String MentorName;
     private String MentorContact;
-    private String WorkDescription;
+    private List<String> WorkDescription;
     private String Location;
     private Logo CompanyLogo;
     private List<String> Technologies;
 
-    public Experience(String CompanyName, String StartTime, String EndTime, String MentorName, String MentorContact, String WorkDescription, String Position, String Location, Logo CompanyLogo, List<String> Technologies)
+    public Experience(String CompanyName, String StartTime, String EndTime, String MentorName, String MentorContact, List<String> WorkDescription, String Position, String Location, Logo CompanyLogo, List<String> Technologies)
     {
         this.CompanyName=CompanyName;
         this.StartTime=StartTime;
@@ -69,11 +69,11 @@ public class Experience {
         MentorContact = mentorContact;
     }
 
-    public String getWorkDescription() {
+    public List<String> getWorkDescription() {
         return WorkDescription;
     }
 
-    public void setWorkDescription(String workDescription) {
+    public void setWorkDescription(List<String> workDescription) {
         WorkDescription = workDescription;
     }
 
