@@ -11,8 +11,9 @@ public class Education {
     private String Country;
     private Logo InstituteLogo;
     private String InstituteAbbr;
+    private String Degree;
 
-    public Education(String instituteName, int startYear, int endYear, float CGPA, String city, String state, String country, Logo InstituteLogo, String InstituteAbbr) {
+    public Education(String instituteName, int startYear, int endYear, float CGPA, String city, String state, String country, Logo InstituteLogo, String InstituteAbbr, String Degree) {
         InstituteName = instituteName;
         StartYear = startYear;
         EndYear = endYear;
@@ -22,6 +23,7 @@ public class Education {
         Country = country;
         this.InstituteLogo = InstituteLogo;
         this.InstituteAbbr = InstituteAbbr;
+        this.Degree = Degree;
     }
 
     public String getInstituteName() {
@@ -87,12 +89,21 @@ public class Education {
     public void setInstituteLogo(Logo instituteLogo) {
         InstituteLogo = instituteLogo;
     }
+
     public String getInstituteAbbr() {
         return InstituteAbbr;
     }
 
     public void setInstituteAbbr(String instituteAbbr) {
         InstituteAbbr = instituteAbbr;
+    }
+
+    public String getDegree() {
+        return Degree;
+    }
+
+    public void setDegree(String degree) {
+        Degree = degree;
     }
 
 }

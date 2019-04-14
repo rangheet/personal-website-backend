@@ -8,14 +8,16 @@ public class PersonalInfo {
     private String Company;
     private String Bio;
     private String ProfileImage;
+    private String Resume;
 
-    public PersonalInfo(String name, String occupation, String dateOfBirth, String company, String bio, String profileImage) {
+    public PersonalInfo(String name, String occupation, String dateOfBirth, String company, String bio, String profileImage, String resume) {
         Name = name;
         Occupation = occupation;
         DateOfBirth = dateOfBirth;
         Company = company;
         Bio = bio;
         ProfileImage = profileImage;
+        Resume = resume;
     }
 
 
@@ -66,6 +68,14 @@ public class PersonalInfo {
 
     public void setProfileImage(String profileImage) {
         ProfileImage = profileImage;
+    }
+
+    public String getResume() {
+        return Resume;
+    }
+
+    public void setResume(String resume) {
+        Resume = resume;
     }
 
 }
