@@ -11,6 +11,13 @@
     <groupId>com.sherlock</groupId>
     <artifactId>personal-website-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+
+    <profiles>
+        <profile>
+            <id>production</id>
+        </profile>
+    </profiles>
+
     <name>personal-website-backend</name>
     <description>rangheet.github.io-backend</description>
     <properties>
