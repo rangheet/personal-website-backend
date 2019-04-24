@@ -1,5 +1,7 @@
 package com.sherlock.Model;
 
+import java.util.List;
+
 public class Education {
 
     private String InstituteName;
@@ -12,8 +14,9 @@ public class Education {
     private Logo InstituteLogo;
     private String InstituteAbbr;
     private String Degree;
+    private List<Elective> Electives;
 
-    public Education(String instituteName, int startYear, int endYear, float CGPA, String city, String state, String country, Logo InstituteLogo, String InstituteAbbr, String Degree) {
+    public Education(String instituteName, int startYear, int endYear, float CGPA, String city, String state, String country, Logo InstituteLogo, String InstituteAbbr, String Degree, List<Elective> Electives) {
         InstituteName = instituteName;
         StartYear = startYear;
         EndYear = endYear;
@@ -24,6 +27,7 @@ public class Education {
         this.InstituteLogo = InstituteLogo;
         this.InstituteAbbr = InstituteAbbr;
         this.Degree = Degree;
+        this.Electives = Electives;
     }
 
     public String getInstituteName() {
@@ -105,5 +109,14 @@ public class Education {
     public void setDegree(String degree) {
         Degree = degree;
     }
+
+    public List<Elective> getElectives() {
+        return Electives;
+    }
+
+    public void setElectives(List<Elective> electives) {
+        Electives = electives;
+    }
+
 
 }

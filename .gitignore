@@ -2,6 +2,8 @@
 /static-data/
 !.mvn/wrapper/maven-wrapper.jar
 .DS_Store
+lib/
+templates/
 
 ### STS ###
 .apt_generated

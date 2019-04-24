@@ -1,18 +1,29 @@
 package com.sherlock.Model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class Experience {
 
+    @JsonProperty("companyName")
     private String CompanyName;
+    @JsonProperty("position")
     private String Position;
+    @JsonProperty("startTime")
     private String StartTime;
     private String EndTime;
+    @JsonProperty("mentorName")
     private String MentorName;
+    @JsonProperty("mentorContact")
     private String MentorContact;
+    @JsonProperty("workDescription")
     private List<String> WorkDescription;
+    @JsonProperty("location")
     private String Location;
+    @JsonProperty("comopanyLogo")
     private Logo CompanyLogo;
+    @JsonProperty("technologies")
     private List<String> Technologies;
 
     public Experience(String CompanyName, String StartTime, String EndTime, String MentorName, String MentorContact, List<String> WorkDescription, String Position, String Location, Logo CompanyLogo, List<String> Technologies)

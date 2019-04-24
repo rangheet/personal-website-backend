@@ -9,13 +9,15 @@ import java.util.List;
 @Component
 public interface StaticInfoInterface {
 
-    PersonalInfo GetPersonalInfo();
-    List<Experience> GetExperiences();
-    List<Elective> GetElectives();
-    List<Project> GetProjects();
-    List<Skill> GetSkills();
-    List<Extracurricular> GetExtracurricular();
-    List<Education> GetEducation();
-    HashMap<String, Logo> GetLogos();
-
+    PersonalInfo GetPersonalInfo(String username);
+    List<Experience> GetExperiences(String username);
+    List<Elective> GetElectives(String username);
+    List<Project> GetProjects(String username);
+    List<Skill> GetSkills(String username);
+    List<Extracurricular> GetExtracurricular(String username);
+    List<Education> GetEducation(String username);
+    HashMap<String, Logo> GetLogos(String username);
+    UsersWebsiteData GetWebsiteDataForUser(String username);
+    UsersWebsiteData UpdateWebsiteDataForUser(UsersWebsiteData username);
+    Users UpdateUserProfile(Users user);
 }

@@ -1,15 +1,22 @@
 package com.sherlock.Service;
 
 import com.sherlock.Model.*;
+import com.sherlock.Repository.UsersRepository;
+import com.sherlock.Repository.UsersWebsiteDataRepository;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.HashMap;
+import java.util.*;
 
 @Service
 public class StaticInfoService implements StaticInfoInterface {
+
+    @Autowired
+    UsersRepository usersRepository;
+
+    @Autowired
+    UsersWebsiteDataRepository usersWebsiteDataRepository;
 
     public StaticInfoService()
     {
@@ -17,18 +24,18 @@ public class StaticInfoService implements StaticInfoInterface {
     }
 
     @Override
-    public PersonalInfo GetPersonalInfo() {
+    public PersonalInfo GetPersonalInfo(String username) {
+
 
         return new PersonalInfo("Heet Dave", "Software Engineer", "856377000000", "Endurance International Group",
                 "I am currently working at Endurance International Group as a Software Engineer. I am working on developing our new product using ReactJS and Java SpringBoot. " +
                 "I have experience with working on both front-end and back-end as well as CI/CD tools such as Docker and Jenkins. I did my undergraduate studies from DA-IICT, Gujarat. " +
                 "I have also worked in fields Information Retrieval, Machine Learning and Natural Language Processing during my internship at Indian Space Research Organization (ISRO).",
                 "Sherlock Icon.png", "HeetDave_Resume.pdf");
-
     }
 
     @Override
-    public List<Experience> GetExperiences() {
+    public List<Experience> GetExperiences(String username) {
 
         Experience experience1=new Experience("Endurance International Group", "1544985000000", "","Dhanya Angepat","NA",
                 new ArrayList<>(Arrays.asList("Designed and developed 'BE' module for invoices management according to business requirements,which is to be used by Web Professionals","Created and integrated new APIs to get data from core back-end","Add about docker secrets")), "Software Engineer","Bangalore, India", new Logo("Endurance", "endurance-logo.jpeg","https://www.endurance.com/"), new ArrayList<>(Arrays.asList("ReactJS", "Redux", "Redux-Saga", "Javascript", "SpringBoot", "Java", "Docker")));
@@ -36,7 +43,6 @@ public class StaticInfoService implements StaticInfoInterface {
                 new ArrayList<>(Arrays.asList("Developed both front-end and back-end of user management and software distribution application for financial trading platform administrators", "Developed SFTP client using company's framework to send trading information securely", "Setup Continuous Integration (CI) for core back-end projects")), "Software Engineer", "Gandhinagar, India", new Logo("FintechGlobalCenter", "fintech-global-center-logo.jpeg","https://www.fintechglobal.center/"), new ArrayList<>(Arrays.asList("ASP.NET Web APIs","C#", "Javascript", "jQuery", "Docker", "Jenkins")));
         Experience experience3=new Experience("Indian Space Research Organization (ISRO)", "1514887200000", "1526032800000","Akhilesh Sharma","NA",
                 new ArrayList<>(Arrays.asList("Developed a tool to automate SRS checking process which leverages Neural Network and NLP techniques", "Used probabilistic N-gram model, POS and NER to extract features from text to train neural network")), "Intern","Ahmedabad, India", new Logo("ISRO", "isro-logo.jpg","https://www.isro.gov.in/"), new ArrayList<>(Arrays.asList("Python", "Natural Language Processing", "Neural Network",  "NLTK Library", "Stanford NLP Tools")));
-
 
         List<Experience> experiences=new ArrayList<>();
         experiences.add(experience1);
@@ -47,7 +53,7 @@ public class StaticInfoService implements StaticInfoInterface {
     }
 
     @Override
-    public List<Elective> GetElectives() {
+    public List<Elective> GetElectives(String username) {
 
         Elective elective1 = new Elective("Data Structures", "IT205", "DA-IICT");
         Elective elective2 = new Elective("Algorithms", "IT301", "DA-IICT");
@@ -86,7 +92,7 @@ public class StaticInfoService implements StaticInfoInterface {
     }
 
     @Override
-    public List<Project> GetProjects() {
+    public List<Project> GetProjects(String username) {
 
         Project project1 = new Project("Alzheimer disease detection using Neural Network","DA-IICT", new ArrayList<>(Arrays.asList("Neural Network","MATLAB")),
                 new ArrayList<>(Arrays.asList("Developed Neural Network to detect Alzheimer from MRI of a brain",
@@ -116,7 +122,7 @@ public class StaticInfoService implements StaticInfoInterface {
     }
 
     @Override
-    public List<Skill> GetSkills() {
+    public List<Skill> GetSkills(String username) {
 
         Skill skill1 = new Skill("C++",10, "Language");
         Skill skill2 = new Skill("C#",8, "Language");
@@ -166,7 +172,7 @@ public class StaticInfoService implements StaticInfoInterface {
     }
 
     @Override
-    public List<Extracurricular> GetExtracurricular() {
+    public List<Extracurricular> GetExtracurricular(String username) {
 
         Extracurricular extracurricular1 = new Extracurricular("Synapse, DA-IICT", "Apr 2016 - Mar 2017","Core Committee Member",
                 "Played a key role in sponsorship, marketing and event management of Annual Festival. Dealt with various companies regarding sponsorship and marketing. As a team managed to get $70,000 for the fest.","Gujarat", "India");
@@ -181,9 +187,41 @@ public class StaticInfoService implements StaticInfoInterface {
     }
 
     @Override
-    public List<Education> GetEducation() {
+    public List<Education> GetEducation(String username) {
 
-        Education education1 = new Education("Dhirubhai Ambani Institute of Information and Communication Technology (DA-IICT)",2014,2018, (float) 7.06, "Gandhinagar","Gujarat","India", new Logo("DA-IICT", "daiict-logo.jpg","https://www.daiict.ac.in/"), "DA-IICT", "B.Tech in Information and Communication Technology (ICT)");
+        Elective elective1 = new Elective("Data Structures", "IT205", "DA-IICT");
+        Elective elective2 = new Elective("Algorithms", "IT301", "DA-IICT");
+        Elective elective3 = new Elective("Object Oriented Programming", "IT114", "DA-IICT");
+        Elective elective4 = new Elective("Computer  Organization", "IT209", "DA-IICT");
+        Elective elective5 = new Elective("Systems Software", "IT215", "DA-IICT");
+        Elective elective6 = new Elective("Neural Networks", "IT481", "DA-IICT");
+        Elective elective7 = new Elective("Database Management System", "IT304", "DA-IICT");
+        Elective elective8 = new Elective("Human Computer Interaction", "IT476", "DA-IICT");
+        Elective elective9 = new Elective("Information Retrieval", "IT550", "DA-IICT");
+        Elective elective10 = new Elective("Software Engineering", "IT314", "DA-IICT");
+        Elective elective11 = new Elective("Operating Systems", "IT308", "DA-IICT");
+        Elective elective12 = new Elective("Internet of Things", "IT478", "DA-IICT");
+        Elective elective13 = new Elective("Systems and Network Security", "IT453", "DA-IICT");
+        Elective elective14 = new Elective("Compiler Design", "IT423", "DA-IICT");
+
+
+        List<Elective> daiictElectives = new ArrayList<>();
+        daiictElectives.add(elective1);
+        daiictElectives.add(elective2);
+        daiictElectives.add(elective3);
+        daiictElectives.add(elective4);
+        daiictElectives.add(elective5);
+        daiictElectives.add(elective6);
+        daiictElectives.add(elective7);
+        daiictElectives.add(elective8);
+        daiictElectives.add(elective9);
+        daiictElectives.add(elective10);
+        daiictElectives.add(elective11);
+        daiictElectives.add(elective12);
+        daiictElectives.add(elective13);
+        daiictElectives.add(elective14);
+
+        Education education1 = new Education("Dhirubhai Ambani Institute of Information and Communication Technology (DA-IICT)",2014,2018, (float) 7.06, "Gandhinagar","Gujarat","India", new Logo("DA-IICT", "daiict-logo.jpg","https://www.daiict.ac.in/"), "DA-IICT", "B.Tech in Information and Communication Technology (ICT)", daiictElectives);
         List<Education> educations = new ArrayList<>();
         educations.add(education1);
 
@@ -192,7 +230,7 @@ public class StaticInfoService implements StaticInfoInterface {
     }
 
     @Override
-    public HashMap<String, Logo> GetLogos() {
+    public HashMap<String, Logo> GetLogos(String username) {
 
         Logo Github = new Logo("Github", "github-logo-white.png","https://github.com/rangheet");
         Logo LinkedIn = new Logo("LinkedIn", "linkedin-logo-white.svg", "https://www.linkedin.com/in/heetdave/");
@@ -206,5 +244,26 @@ public class StaticInfoService implements StaticInfoInterface {
 
         return Logos;
     }
+
+    @Override
+    public UsersWebsiteData GetWebsiteDataForUser(String username) {
+
+        return usersWebsiteDataRepository.findById(username).orElse(null);
+
+    }
+
+    @Override
+    public UsersWebsiteData UpdateWebsiteDataForUser(UsersWebsiteData usersWebsiteData) {
+        usersWebsiteDataRepository.save(usersWebsiteData);
+        return usersWebsiteDataRepository.findById(usersWebsiteData.getUsername()).orElse(null);
+    }
+
+    @Override
+    public Users UpdateUserProfile(Users user) {
+        System.out.println("PROFIELE "+ ReflectionToStringBuilder.toString(user));
+        usersRepository.save(user);
+        return usersRepository.findById(user.getUsername()).orElse(null);
+    }
+
 
 }
