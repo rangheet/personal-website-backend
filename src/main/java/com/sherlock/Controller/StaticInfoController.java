@@ -70,15 +70,19 @@ public class StaticInfoController {
 
     @RequestMapping(value = "/WebsiteData", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<UsersWebsiteData> GetWebsiteDataForUser(@RequestParam(required = false) String username){
+        System.out.println(username);
         return new ResponseEntity<>(staticInfoService.GetWebsiteDataForUser(username), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/WebsiteData", method = RequestMethod.POST, consumes = "application/json")
-    public UsersWebsiteData UpdateWebsiteDataForUser(@RequestBody String usersWebsiteData) throws JSONException {
+    public UsersWebsiteData UpdateWebsiteDataForUser(@RequestBody UsersWebsiteData usersWebsiteData) {
         JSONObject jsonObject =  new JSONObject(usersWebsiteData);
-        return staticInfoService.UpdateWebsiteDataForUser(new UsersWebsiteData(jsonObject.getString("username"),jsonObject.getString("personalInfo"),
-                jsonObject.getString("experiences"), jsonObject.getString("education"), jsonObject.getString("projects"),
-                jsonObject.getString("skills"), jsonObject.getString("extracurricular"), jsonObject.getString("logos")));
+        System.out.println("Posted Data" + jsonObject);
+
+        return  staticInfoService.UpdateWebsiteDataForUser(usersWebsiteData);
+//        return staticInfoService.UpdateWebsiteDataForUser(new UsersWebsiteData(jsonObject.getString("username"),jsonObject.getString("personalInfo"),
+//                jsonObject.getString("experiences"), jsonObject.getString("education"), jsonObject.getString("projects"),
+//                jsonObject.getString("skills"), jsonObject.getString("extracurricular"), jsonObject.getString("logos")));
     }
 
     @RequestMapping(value = "/User", method = RequestMethod.POST, consumes = "application/json")

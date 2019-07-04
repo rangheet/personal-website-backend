@@ -248,14 +248,15 @@ public class StaticInfoService implements StaticInfoInterface {
     @Override
     public UsersWebsiteData GetWebsiteDataForUser(String username) {
 
-        return usersWebsiteDataRepository.findById(username).orElse(null);
+        return usersWebsiteDataRepository.findById(username).orElse(new UsersWebsiteData());
 
     }
 
     @Override
     public UsersWebsiteData UpdateWebsiteDataForUser(UsersWebsiteData usersWebsiteData) {
+        System.out.println("Object print" + ReflectionToStringBuilder.toString(usersWebsiteData));
         usersWebsiteDataRepository.save(usersWebsiteData);
-        return usersWebsiteDataRepository.findById(usersWebsiteData.getUsername()).orElse(null);
+        return usersWebsiteDataRepository.findById(usersWebsiteData.getUsername()).orElse(new UsersWebsiteData());
     }
 
     @Override

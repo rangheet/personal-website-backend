@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.sun.xml.internal.fastinfoset.util.StringIntMap;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -83,7 +82,7 @@ public class UsersWebsiteData {
     @JsonProperty("experiences")
     public void setExperiences(String experiences) {
         //JSONArray jsonArray = new JSONArray(experiences);
-        //System.out.println(" setExperiences "+ new JSONObject(experiences.get(1)).toString());
+        //System.out.println(" setExperiences "+ new String(experiences.get(1)).toString());
         Experiences = experiences ;
     }
 
